@@ -1,0 +1,30 @@
+plugin.tx_faq {
+    view {
+        templateRootPaths.0 = EXT:faq/Resources/Private/Templates/
+        templateRootPaths.1 = {$plugin.tx_faq.view.templateRootPath}
+        partialRootPaths.0 = EXT:faq/Resources/Private/Partials/
+        partialRootPaths.1 = {$plugin.tx_faq.view.partialRootPath}
+        layoutRootPaths.0 = EXT:faq/Resources/Private/Layouts/
+        layoutRootPaths.1 = {$plugin.tx_faq.view.layoutRootPath}
+    }
+    persistence {
+        storagePid = {$plugin.tx_faq.persistence.storagePid}
+        #recursive = 1
+    }
+    features {
+        #skipDefaultArguments = 1
+        # if set to 1, the enable fields are ignored in BE context
+        ignoreAllEnableFieldsInBe = 0
+    }
+    mvc {
+        #callDefaultActionIfActionCantBeResolved = 1
+    }
+}
+
+page.includeCSS {
+    faq = EXT:faq/Resources/Public/Css/faq.css
+}
+page.includeJS {
+    faq = EXT:faq/Resources/Public/Js/faq.js
+}
+
